@@ -1,16 +1,20 @@
 import { Fragment } from "react";
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
 import Image from "next/image";
 
 import HeaderCartButton from "./HeaderCartButton";
 import bannerImage from "../../assets/banner.png";
 import classes from "./Header.module.css";
 import logoImage from "../../assets/logo.png";
+import { cartActions } from "../../store/cart-slice";
 
 const Header = (props) => {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const logoHandler = () => {
+    dispatch(cartActions.productIsLoading(false));
     router.push("/");
   };
 
