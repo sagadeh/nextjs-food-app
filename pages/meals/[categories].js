@@ -1,7 +1,11 @@
 import { MongoClient } from "mongodb";
+import { useDispatch } from "react-redux";
 import AvailableMeals from "../../components/Meals/AvailableMeals";
+import { cartActions } from "../../store/cart-slice";
 
 const MealsPage = (props) => {
+  const dispatch = useDispatch();
+  dispatch(cartActions.productIsLoading(props.isLoading));
   return <AvailableMeals onProductsList={props.products} />;
 };
 
@@ -37,7 +41,7 @@ export async function getStaticProps(context) {
     (products) => products.category === categoryRoute
   );
 
-  console.log(filtered, "_filtered");
+  //console.log(filtered, "_filtered");
 
   client.close();
 
@@ -50,6 +54,7 @@ export async function getStaticProps(context) {
         productImage: product.productImage,
         id: product._id.toString(),
       })),
+      isLoading: false,
       revalidate: 1,
     },
   };

@@ -12,6 +12,10 @@
   margin: 0;
   padding: 0;
 }
+.product-loading {
+  text-align: center;
+  color: #000000;
+}
 
 @keyframes category-appear {
   from {

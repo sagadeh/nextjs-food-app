@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import { useDispatch } from "react-redux";
 
 import Dairy from "../../assets/dairy.png";
 import Snacks from "../../assets/snacks.png";
@@ -11,32 +12,42 @@ import Pantry from "../../assets/pantry.png";
 import CategoryItem from "./CategoryItem";
 import classes from "../Meals/Category.module.css";
 import Card from "../UI/Card";
+import { cartActions } from "../../store/cart-slice";
 
 const Categories = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
 
   const dairyAndEggsHandler = () => {
+    dispatch(cartActions.productIsLoading(true));
     router.push("/meals/dairy-and-eggs");
   };
   const snacksHandler = () => {
+    dispatch(cartActions.productIsLoading(true));
     router.push("/meals/snacks-and-confectioneries");
   };
   const drinksHandler = () => {
+    dispatch(cartActions.productIsLoading(true));
     router.push("/meals/beer-wines-and-spirit");
   };
   const plantsHandler = () => {
+    dispatch(cartActions.productIsLoading(true));
     router.push("/meals/fruits-and-vegetables");
   };
   const meatAndSeafoodHandler = () => {
+    dispatch(cartActions.productIsLoading(true));
     router.push("/meals/meat-and-seafood");
   };
   const beveragesHandler = () => {
+    dispatch(cartActions.productIsLoading(true));
     router.push("/meals/beverages");
   };
   const frozenHandler = () => {
+    dispatch(cartActions.productIsLoading(true));
     router.push("/meals/frozen");
   };
   const pantryHandler = () => {
+    dispatch(cartActions.productIsLoading(true));
     router.push("/meals/pantry");
   };
 

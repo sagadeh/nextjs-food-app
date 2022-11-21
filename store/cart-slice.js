@@ -4,6 +4,7 @@ const defaultCartState = {
   items: [],
   totalAmount: 0,
   isCheckout: false,
+  isLoading: false,
 };
 
 const cartSlice = createSlice({
@@ -48,6 +49,9 @@ const cartSlice = createSlice({
     },
     hideCheckoutForm(state) {
       state.isCheckout = false;
+    },
+    productIsLoading(state, action) {
+      state.isLoading = action.payload;
     },
     clearCart(state) {
       state.items = [];
