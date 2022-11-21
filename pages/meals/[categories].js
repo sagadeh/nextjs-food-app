@@ -1,11 +1,14 @@
 import { MongoClient } from "mongodb";
+import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import AvailableMeals from "../../components/Meals/AvailableMeals";
 import { cartActions } from "../../store/cart-slice";
 
 const MealsPage = (props) => {
   const dispatch = useDispatch();
-  dispatch(cartActions.productIsLoading(props.isLoading));
+  useEffect(() => {
+    dispatch(cartActions.productIsLoading(props.isLoading));
+  }, []);
   return <AvailableMeals onProductsList={props.products} />;
 };
 
