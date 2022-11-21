@@ -7,7 +7,7 @@ const MealsPage = (props) => {
 
 export async function getStaticPaths() {
   return {
-    fallback: "blocking",
+    fallback: "false",
     paths: [
       { params: { categories: "dairy-and-eggs" } },
       { params: { categories: "snacks-and-confectioneries" } },
