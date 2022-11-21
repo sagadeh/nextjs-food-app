@@ -37,6 +37,8 @@ export async function getStaticProps(context) {
     (products) => products.category === categoryRoute
   );
 
+  console.log(filtered);
+
   client.close();
 
   return {
