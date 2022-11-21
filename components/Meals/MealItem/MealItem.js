@@ -29,7 +29,7 @@ const MealItem = (props) => {
       <div>
         <h3>{props.name}</h3>
         <div className={classes.description}>{props.description}</div>
-        <div className={classes.price}>P{numberWithCommas(price)}</div>
+        <div className={classes.price}>₱{numberWithCommas(price)}</div>
         <img className={classes.productImage} src={props.productImage} alt="" />
       </div>
       <div>
