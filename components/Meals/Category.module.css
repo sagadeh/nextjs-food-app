@@ -2,7 +2,7 @@
   max-width: 60rem;
   width: 90%;
   margin: 2rem auto;
-  animation: category-appear 1s ease-out forwards;
+  animation: category-appear 0.5s ease-out forwards;
 }
 .category ul {
   display: flex;
