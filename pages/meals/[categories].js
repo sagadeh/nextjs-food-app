@@ -1,5 +1,6 @@
 import { MongoClient } from "mongodb";
-import { useEffect } from "react";
+import Head from "next/head";
+import { Fragment, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import AvailableMeals from "../../components/Meals/AvailableMeals";
 import { cartActions } from "../../store/cart-slice";
@@ -9,12 +10,23 @@ const MealsPage = (props) => {
   useEffect(() => {
     dispatch(cartActions.productIsLoading(props.isLoading));
   }, []);
-  return <AvailableMeals onProductsList={props.products} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>Landmark - Products</title>
+        <meta
+          name="description"
+          content="Landmark.ph offers a convenient way for shoppers to buy groceries online without ever leaving the comfort of their homes."
+        />
+      </Head>
+      <AvailableMeals onProductsList={props.products} />
+    </Fragment>
+  );
 };
 
 export async function getStaticPaths() {
   return {
-    fallback: "blocking",
+    fallback: false,
     paths: [
       { params: { categories: "dairy-and-eggs" } },
       { params: { categories: "snacks-and-confectioneries" } },
