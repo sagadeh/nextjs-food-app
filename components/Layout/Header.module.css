@@ -19,7 +19,7 @@
   height: 25rem;
   z-index: 0;
   overflow: hidden;
-  margin-top: 80px;
+  margin-top: 70px;
 }
 
 .main-image img {
@@ -36,4 +36,13 @@
 
 .logo:hover {
   cursor: pointer;
+}
+
+@media (max-width: 670px) {
+  .logo {
+    height: 60%;
+  }
+  .main-image {
+    margin-top: 0px;
+  }
 }
