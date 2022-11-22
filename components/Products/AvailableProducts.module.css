@@ -1,4 +1,4 @@
-.meals {
+.products {
   max-width: 60rem;
   width: 90%;
   margin: 2rem auto;
@@ -15,7 +15,7 @@
   color: red;
 }
 
-.meals ul {
+.products ul {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;

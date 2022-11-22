@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 
 import { cartActions } from "../../store/cart-slice";
 import Header from "../../components/Layout/Header";
-import MealsSummary from "../Meals/MealsSummary";
+import ProductsSummary from "../Products/ProductsSummary";
 import Cart from "../Cart/Cart";
 
 const Layout = (props) => {
@@ -23,7 +23,7 @@ const Layout = (props) => {
       {cartIsShown && <Cart onClose={hideCartHandler} />}
       <Header onShowCart={showCartHandler} />
       <main>
-        <MealsSummary />
+        <ProductsSummary />
         {props.children}
       </main>
     </Fragment>

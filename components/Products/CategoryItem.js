@@ -1,5 +1,5 @@
 import Image from "next/image";
-import classes from "../Meals/CategoryItem.module.css";
+import classes from "../Products/CategoryItem.module.css";
 
 const CategoryItem = (props) => {
   return (

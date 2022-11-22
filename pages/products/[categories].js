@@ -2,10 +2,10 @@ import { MongoClient } from "mongodb";
 import Head from "next/head";
 import { Fragment, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import AvailableMeals from "../../components/Meals/AvailableMeals";
+import AvailableProducts from "../../components/Products/AvailableProducts";
 import { cartActions } from "../../store/cart-slice";
 
-const MealsPage = (props) => {
+const ProductsPage = (props) => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(cartActions.productIsLoading(props.isLoading));
@@ -19,7 +19,7 @@ const MealsPage = (props) => {
           content="Landmark.ph offers a convenient way for shoppers to buy groceries online without ever leaving the comfort of their homes."
         />
       </Head>
-      <AvailableMeals onProductsList={props.products} />
+      <AvailableProducts onProductsList={props.products} />
     </Fragment>
   );
 };
@@ -75,4 +75,4 @@ export async function getStaticProps(context) {
   };
 }
 
-export default MealsPage;
+export default ProductsPage;

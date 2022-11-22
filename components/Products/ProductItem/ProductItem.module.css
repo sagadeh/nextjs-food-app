@@ -1,4 +1,4 @@
-.meal {
+.product {
   width: 200px;
   display: flex;
   justify-content: space-between;
@@ -9,7 +9,7 @@
   padding: 1em;
 }
 
-.meal h3 {
+.product h3 {
   margin: 0 0 0.25rem 0;
 }
 

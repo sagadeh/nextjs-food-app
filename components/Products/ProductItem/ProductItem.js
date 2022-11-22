@@ -1,10 +1,10 @@
 import { useDispatch } from "react-redux";
 
-import MealItemForm from "./MealItemForm";
-import classes from "./MealItem.module.css";
+import ProductItemForm from "./ProductItemForm";
+import classes from "./ProductItem.module.css";
 import { cartActions } from "../../../store/cart-slice";
 
-const MealItem = (props) => {
+const ProductItem = (props) => {
   const dispatch = useDispatch();
 
   const price = `${props.price.toFixed(2)}`;
@@ -25,7 +25,7 @@ const MealItem = (props) => {
   };
 
   return (
-    <li className={classes.meal}>
+    <li className={classes.product}>
       <div>
         <h3>{props.name}</h3>
         <div className={classes.description}>{props.description}</div>
@@ -33,10 +33,10 @@ const MealItem = (props) => {
         <img className={classes.productImage} src={props.productImage} alt="" />
       </div>
       <div>
-        <MealItemForm onAddToCart={addToCartHandler} id={props.id} />
+        <ProductItemForm onAddToCart={addToCartHandler} id={props.id} />
       </div>
     </li>
   );
 };
 
-export default MealItem;
+export default ProductItem;

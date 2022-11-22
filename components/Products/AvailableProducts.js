@@ -1,10 +1,8 @@
-import { useEffect, useState } from "react";
-
 import Card from "../UI/Card";
-import MealItem from "./MealItem/MealItem";
-import classes from "./AvailableMeals.module.css";
+import ProductItem from "./ProductItem/ProductItem";
+import classes from "./AvailableProducts.module.css";
 
-const AvailableMeals = (props) => {
+const AvailableProducts = (props) => {
   //const [meals, setMeals] = useState([]);
   //const [isLoading, setIsLoading] = useState(true);
   //const [httpError, setHttpError] = useState();
@@ -42,9 +40,8 @@ const AvailableMeals = (props) => {
   //     setHttpError(error.message);
   //   });
   // }, []);
-
   const productsList = props.onProductsList.map((product) => (
-    <MealItem
+    <ProductItem
       key={product.id}
       id={product.id} // this is new!
       name={product.name}
@@ -53,7 +50,6 @@ const AvailableMeals = (props) => {
       productImage={product.productImage}
     />
   ));
-
   // if (isLoading) {
   //   return (
   //     <section className={classes.MealsLoading}>
@@ -69,9 +65,8 @@ const AvailableMeals = (props) => {
   //     </section>
   //   );
   // }
-
   return (
-    <section className={classes.meals}>
+    <section className={classes.products}>
       <Card>
         <ul>{productsList}</ul>
       </Card>
@@ -79,4 +74,4 @@ const AvailableMeals = (props) => {
   );
 };
 
-export default AvailableMeals;
+export default AvailableProducts;
