@@ -30,7 +30,7 @@ const Cart = (props) => {
   };
 
   const orderHandler = () => {
-    dispatch(cartActions.showCheckoutForm());
+    dispatch(cartActions.checkoutFormVisible(true));
   };
 
   const submitOrderHandler = async (userData) => {

@@ -12,7 +12,7 @@ const Layout = (props) => {
 
   const showCartHandler = () => {
     setCartIsShown(true);
-    dispatch(cartActions.hideCheckoutForm());
+    dispatch(cartActions.checkoutFormVisible(false));
   };
   const hideCartHandler = () => {
     setCartIsShown(false);

@@ -44,11 +44,8 @@ const cartSlice = createSlice({
         existingItem.amount--;
       }
     },
-    showCheckoutForm(state) {
-      state.isCheckout = true;
-    },
-    hideCheckoutForm(state) {
-      state.isCheckout = false;
+    checkoutFormVisible(state, action) {
+      state.isCheckout = action.payload;
     },
     productIsLoading(state, action) {
       state.isLoading = action.payload;
